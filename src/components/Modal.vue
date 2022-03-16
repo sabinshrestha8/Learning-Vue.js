@@ -1,11 +1,14 @@
 <template>
     <div class="backdrop">
         <div class="modal">
+            <h1>Modal Title</h1>
             <p>modal content</p>
         </div>
     </div>
 </template>
 
+// creating the Modal component style scoped
+<!-- <style scoped></style> -->
 <style>
 .modal {
     width: 400px;
@@ -20,5 +23,15 @@
     background: rgba(0, 0, 0, 0.5);
     width: 100%;
     height: 100%;
+}
+/* making the selector more specific */
+.modal h1 {
+    color: #03cfb4;
+    border: none;
+    padding: 0;
+}
+/* overides the global style css rules */
+.modal p {
+    font-style: normal;
 }
 </style>
