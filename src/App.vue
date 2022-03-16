@@ -1,15 +1,34 @@
 <template>
     <h1>{{ title }}</h1>
+    <input type="text" ref="name">
+    <button @click="handleClick">click me</button>
+
+    <!-- using component Modal in template of root component -->
+    <Modal />
 </template>
 
 <script>
+import Modal from './components/Modal.vue'
+
 export default {
     name: "App",
+    // Registering sub-components that you want to use
+    components: {
+      Modal
+    },
     data() {
         return {
             title: "My First Vue App :)",
         };
     },
+    methods: {
+      handleClick() {
+        // console.log(this.$refs);
+        console.log(this.$refs.name)
+        this.$refs.name.classList.add('active')
+        this.$refs.name.focus()
+      }
+    }
 };
 </script>
 
