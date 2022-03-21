@@ -1,20 +1,21 @@
 <template>
     <h1>{{ title }}</h1>
-    <input type="text" ref="name">
+    <input type="text" ref="name" />
     <button @click="handleClick">click me</button>
 
     <!-- using component Modal in template of root component -->
-    <Modal />
+    <!-- creating prop in the component as an attribute -->
+    <Modal header="Sign up for the Giveaway" text="Grab your ninja swag for half price!"/>
 </template>
 
 <script>
-import Modal from './components/Modal.vue'
+import Modal from "./components/Modal.vue";
 
 export default {
     name: "App",
     // Registering sub-components that you want to use
     components: {
-      Modal
+        Modal,
     },
     data() {
         return {
@@ -22,13 +23,13 @@ export default {
         };
     },
     methods: {
-      handleClick() {
-        // console.log(this.$refs);
-        console.log(this.$refs.name)
-        this.$refs.name.classList.add('active')
-        this.$refs.name.focus()
-      }
-    }
+        handleClick() {
+            // console.log(this.$refs);
+            console.log(this.$refs.name);
+            this.$refs.name.classList.add("active");
+            this.$refs.name.focus();
+        },
+    },
 };
 </script>
 
@@ -43,8 +44,8 @@ export default {
 }
 
 h1 {
-   border-bottom: 1px solid #ddd;
-   display: inline-block;
-   padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    display: inline-block;
+    padding-bottom: 10px;
 }
 </style>

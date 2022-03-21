@@ -1,14 +1,29 @@
 <template>
     <div class="backdrop">
         <div class="modal">
-            <h1>Modal Title</h1>
-            <p>modal content</p>
+            <h1>{{ header }}</h1>
+            <p>{{ text }}</p>
         </div>
     </div>
 </template>
 
-// creating the Modal component style scoped
-<!-- <style scoped></style> -->
+<!-- accepts certain props in the component-->
+<script>
+export default {
+    // passing / registering any values or props we will be accepting into this component
+
+    props: ["header", "text"],
+
+    /*  doesn't need to be defined in data() function because 
+        we passed it in <Modal /> as an attribute in root component 
+    */
+};
+</script>
+
+<!-- creating the Modal component style scoped 
+    <style scoped></style>
+-->
+
 <style>
 .modal {
     width: 400px;
