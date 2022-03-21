@@ -5,7 +5,7 @@
 
     <!-- using component Modal in template of root component -->
     <!-- creating prop in the component as an attribute -->
-    <Modal header="Sign up for the Giveaway" text="Grab your ninja swag for half price!"/>
+    <Modal v-bind:header="header" v-bind:text="text" />
 </template>
 
 <script>
@@ -20,6 +20,8 @@ export default {
     data() {
         return {
             title: "My First Vue App :)",
+            header: "Sign up for the Giveaway!",
+            text: "Grab your ninja swag for half price!",
         };
     },
     methods: {
