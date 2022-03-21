@@ -3,9 +3,9 @@
     <input type="text" ref="name" />
     <button @click="handleClick">click me</button>
 
-    <!-- using component Modal in template of root component -->
     <!-- creating prop in the component as an attribute -->
-    <Modal v-bind:header="header" v-bind:text="text" />
+    <!-- adding custom theme prop in the model as an attribute -->
+    <Modal v-bind:header="header" v-bind:text="text" theme="sale"/>
 </template>
 
 <script>
