@@ -1,11 +1,18 @@
 <template>
     <h1>{{ title }}</h1>
+    <br>
     <input type="text" ref="name" />
     <button @click="handleClick">click me</button>
+    <p>Welcome...</p>
 
     <!-- creating prop in the component as an attribute -->
     <!-- adding custom theme prop in the model as an attribute -->
-    <Modal v-bind:header="header" v-bind:text="text" theme="sale"/>
+
+    <div v-if="showModal">
+        <!-- listen to the event emitted by the Modal component i.e. child component -->
+        <Modal v-bind:header="header" v-bind:text="text" theme="sale" @close="toggleModal"/>
+    </div>
+    <button @click="toggleModal">open modal</button>
 </template>
 
 <script>
@@ -22,6 +29,7 @@ export default {
             title: "My First Vue App :)",
             header: "Sign up for the Giveaway!",
             text: "Grab your ninja swag for half price!",
+            showModal: false,
         };
     },
     methods: {
@@ -31,6 +39,9 @@ export default {
             this.$refs.name.classList.add("active");
             this.$refs.name.focus();
         },
+        toggleModal() {
+            this.showModal = !this.showModal;
+        }
     },
 };
 </script>

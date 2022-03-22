@@ -1,5 +1,5 @@
 <template>
-    <div class="backdrop">
+    <div class="backdrop" @click="closeModal">
         <!-- check based on the value of that theme inside the <Modal/> 
             we could add conditional class to style it differently.
 
@@ -22,6 +22,13 @@ export default {
     /*  doesn't need to be defined in data() function because 
         we passed it in <Modal /> as an attribute in root component 
     */
+
+    methods: {
+        closeModal() {
+            // emit the custom events from the component
+            this.$emit("close");
+        },
+    },
 };
 </script>
 
