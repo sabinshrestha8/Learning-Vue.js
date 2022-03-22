@@ -8,7 +8,7 @@
     <!-- creating prop in the component as an attribute -->
     <!-- adding custom theme prop in the model as an attribute -->
 
-    <div v-if="showModal">
+    <teleport to=".modals" v-if="showModal">
         <!-- listen to the event emitted by the Modal component i.e. child component -->
         <Modal theme="sale" @close="toggleModal">
             <!-- Template passed inside here is known as slot -->
@@ -21,7 +21,7 @@
                 <a href="#">more info</a>
             </template>
         </Modal>
-    </div>
+    </teleport>
     <button @click.alt="toggleModal">open modal (alt)</button>
 
     <div v-if="showModalTwo">
@@ -72,7 +72,7 @@ export default {
 </script>
 
 <style>
-#app {
+#app, .modals {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
