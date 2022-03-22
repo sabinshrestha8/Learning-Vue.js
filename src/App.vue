@@ -12,7 +12,7 @@
         <!-- listen to the event emitted by the Modal component i.e. child component -->
         <Modal v-bind:header="header" v-bind:text="text" theme="sale" @close="toggleModal"/>
     </div>
-    <button @click="toggleModal">open modal</button>
+    <button @click.alt="toggleModal">open modal (alt)</button>
 </template>
 
 <script>

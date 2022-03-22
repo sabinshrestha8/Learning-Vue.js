@@ -1,5 +1,5 @@
 <template>
-    <div class="backdrop" @click="closeModal">
+    <div class="backdrop" @click.self="closeModal">
         <!-- check based on the value of that theme inside the <Modal/> 
             we could add conditional class to style it differently.
 
@@ -14,6 +14,7 @@
 
 <!-- accepts certain props in the component-->
 <script>
+// create local registration for Vue component
 export default {
     // passing / registering any values or props we will be accepting into this component
 
