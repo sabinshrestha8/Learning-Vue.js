@@ -1,6 +1,6 @@
 <template>
     <h1>{{ title }}</h1>
-    <br>
+    <br />
     <input type="text" ref="name" />
     <button @click="handleClick">click me</button>
     <p>Welcome...</p>
@@ -10,7 +10,17 @@
 
     <div v-if="showModal">
         <!-- listen to the event emitted by the Modal component i.e. child component -->
-        <Modal v-bind:header="header" v-bind:text="text" theme="sale" @close="toggleModal"/>
+        <Modal theme="sale" @close="toggleModal">
+            <!-- Template passed inside here is known as slot -->
+            <h1>Ninja Giveaway!</h1>
+            <p>Grab your ninja swag for half price!</p>
+
+            <!-- using slot directive to give template a slot name -->
+            <template v-slot:links>
+                <a href="#">Sign up now</a>
+                <a href="#">more info</a>
+            </template>
+        </Modal>
     </div>
     <button @click.alt="toggleModal">open modal (alt)</button>
 </template>
@@ -41,7 +51,7 @@ export default {
         },
         toggleModal() {
             this.showModal = !this.showModal;
-        }
+        },
     },
 };
 </script>
